@@ -1,9 +1,11 @@
+package stock;
+
 public class Inheritance_3 {
 
     int quantity;
     int lowOrderLevelQuantity;
 
-    public Inheritance_3(int quantity, int lowOrderLevelQuantity) {  // ✅ correct
+    public Inventory(int quantity, int lowOrderLevelQuantity) {
         this.quantity = quantity;
         this.lowOrderLevelQuantity = lowOrderLevelQuantity;
     }

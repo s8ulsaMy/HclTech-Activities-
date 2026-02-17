@@ -12,6 +12,8 @@ public class LeapYear {
         } else {
             System.out.println("Not a leap year");
         }
+
+        // Fix: Closing the scanner to prevent the resource leak
+        sc.close();
     }
 }
-

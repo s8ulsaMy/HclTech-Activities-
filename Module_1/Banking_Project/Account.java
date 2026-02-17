@@ -1,34 +1,36 @@
 package Banking_Project;
 /**
- * Represents a bank account in the Banking Project.
- * * @author Student
- * @version 1.0
- * Project: Banking System
+ * Base Account class with static members and constants.
  */
 public class Account {
-    private String accountNumber;
-    private double balance;
-    private String accountHolderName;
+    // Constants for interest rates
+    public static final double SAVINGS_RATE = 4.0;
+    public static final double RECURRING_RATE = 6.5;
+    public static final double FIXED_RATE = 7.5;
 
-    /**
-     * No-argument constructor.
-     * Initializes a default account with empty strings and zero balance.
-     */
+    private static int idCounter = 1000;
+    protected String accountNumber;
+    protected double balance;
+
+    // No-argument constructor
     public Account() {
-        this.accountNumber = "UNKNOWN";
+        this.accountNumber = generateAccountNumber();
         this.balance = 0.0;
-        this.accountHolderName = "N/A";
     }
 
-    /**
-     * Parameterized constructor.
-     * * @param accountNumber The unique ID for the account.
-     * @param balance The initial deposit amount.
-     * @param accountHolderName The name of the person owning the account.
-     */
-    public Account(String accountNumber, double balance, String accountHolderName) {
-        this.accountNumber = accountNumber;
+    // Parameterized constructor
+    public Account(double balance) {
+        this(); // Calls no-arg constructor
         this.balance = balance;
-        this.accountHolderName = accountHolderName;
+    }
+
+    // Static method for account generation
+    public static String generateAccountNumber() {
+        return "HCL" + (++idCounter);
     }
 }
+
+// Subclasses for instanceof checks
+class SavingsAccount extends Account { public SavingsAccount(double b) { super(b); } }
+class RecurringAccount extends Account { public RecurringAccount(double b) { super(b); } }
+class FixedAccount extends Account { public FixedAccount(double b) { super(b); } }

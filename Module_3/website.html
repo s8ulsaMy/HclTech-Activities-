@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Software Company</title>
+
+    <style>
+        /* Background color */
+        body {
+            background-color: #e6f2ff;
+            font-family: Arial;
+        }
+
+        /* Two pane layout */
+        .container {
+            display: flex;
+        }
+
+        .left {
+            width: 25%;
+            padding: 20px;
+        }
+
+        .right {
+            width: 75%;
+            padding: 20px;
+            border-left: 2px solid black;
+        }
+
+        /* Links style */
+        a {
+            display: block;
+            margin: 10px 0;
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        /* Headings style */
+        h1, h2, h3 {
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            color: red;
+            font-family: Georgia, serif;
+        }
+
+        /* Form labels */
+        label {
+            font-family: "Times New Roman";
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Left Pane -->
+    <div class="left">
+        <h3>Menu</h3>
+        <a onclick="home()">Home</a>
+        <a onclick="about()">About Us</a>
+        <a onclick="clients()">Clients</a>
+        <a onclick="careers()">Careers</a>
+        <a onclick="contact()">Contact Us</a>
+    </div>
+
+    <!-- Right Pane -->
+    <div class="right" id="content">
+        <h2>Welcome</h2>
+        Click a link on the left.
+    </div>
+
+</div>
+
+<script>
+function home(){
+    content.innerHTML =
+    "<h1>ABC Software Company</h1><img src='https://via.placeholder.com/200'>";
+}
+
+function about(){
+    content.innerHTML =
+    "<h2>About Us</h2><p>We provide IT solutions worldwide.</p>";
+}
+
+function clients(){
+    content.innerHTML =
+    "<h2>Clients</h2><ul><li>TCS</li><li>Infosys</li><li>Wipro</li></ul>";
+}
+
+function careers(){
+    content.innerHTML = `
+    <h2>Registration Form</h2>
+    <form>
+        <label>Name:</label>
+        <input type="text"><br><br>
+
+        <label>Date of Birth:</label>
+        <input type="date"><br><br>
+
+        <label>Gender:</label>
+        <input type="radio" name="g">Male
+        <input type="radio" name="g">Female<br><br>
+
+        <label>Email:</label>
+        <input type="email"><br><br>
+
+        <label>Phone:</label>
+        <input type="text"><br><br>
+
+        <label>Qualification:</label>
+        <select>
+            <option>BSc</option>
+            <option>BTech</option>
+            <option>MCA</option>
+        </select><br><br>
+
+        <label>Technology Known:</label>
+        <input type="checkbox">Java
+        <input type="checkbox">HTML
+        <input type="checkbox">Python<br><br>
+
+        <input type="submit">
+        <input type="reset">
+    </form>`;
+}
+
+function contact(){
+    content.innerHTML =
+    "<h2>Contact Us</h2><p>Email: abc@company.com<br>Phone: 1234567890</p>";
+}
+</script>
+
+</body>
+</html>
