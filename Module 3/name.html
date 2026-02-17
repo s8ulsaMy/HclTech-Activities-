@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Initials Generator</title>
+</head>
+
+<body>
+
+<script>
+    let name = prompt("Enter your full name:");
+
+    if (name != null && name.trim() != "") {
+        let parts = name.trim().split(" ");
+
+        let firstInitial = parts[0].charAt(0).toUpperCase();
+        let lastInitial = parts[parts.length - 1].charAt(0).toUpperCase();
+
+        let initials = firstInitial + lastInitial;
+
+        alert("Your initials are: " + initials);
+    }
+</script>
+
+</body>
+</html>
