@@ -1,34 +1,36 @@
 public class Inheritance_1 {
-    class Vehicle {
-    void start() {
-        System.out.println("Vehicle starts");
+
+    // Making these static allows them to be instantiated in the static main method
+    static class Vehicle {
+        void start() {
+            System.out.println("Vehicle starts");
+        }
+
+        void stop() {
+            System.out.println("Vehicle stops");
+        }
     }
 
-    void stop() {
-        System.out.println("Vehicle stops");
+    static class Truck extends Vehicle {
+        void loadGoods() {
+            System.out.println("Truck is loading goods");
+        }
     }
-}
 
-class Truck extends Vehicle {
-    void loadGoods() {
-        System.out.println("Truck is loading goods");
+    static class Bus extends Vehicle {
+        void carryPassengers() {
+            System.out.println("Bus is carrying passengers");
+        }
     }
-}
 
-class Bus extends Vehicle {
-    void carryPassengers() {
-        System.out.println("Bus is carrying passengers");
+    static class Car extends Vehicle {
+        void playMusic() {
+            System.out.println("Car is playing music");
+        }
     }
-}
 
-class Car extends Vehicle {
-    void playMusic() {
-        System.out.println("Car is playing music");
-    }
-}
-
-public class Main {
     public static void main(String[] args) {
+        // Now these will work without the "non-static variable" error
         Truck t = new Truck();
         t.start();
         t.loadGoods();
@@ -41,6 +43,4 @@ public class Main {
         c.start();
         c.playMusic();
     }
-}
-
 }
